@@ -1,7 +1,7 @@
 //Para poder acceder a toda la aplicación: daniload@gmail.com
 //admin123
 
-ruta para hacer login: http://localhost:4200
+ruta para hacer login: http://localhost:4200/login
 
 
 # ProyectoPortafolio
