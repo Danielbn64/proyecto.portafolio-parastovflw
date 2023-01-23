@@ -1,0 +1,55 @@
+<div class="container">
+  <h2>Ingresar</h2>
+  <section class="form-wrapper">
+    <form
+    class="form-login"
+      [formGroup]="userForm"
+      (ngSubmit)="onSubmit(userForm.value)"
+    >
+      <div>
+        <label class="label-one"><h4>Correo</h4></label><br>
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          formControlName="email"
+        /><br>
+        <p>
+          <span
+            *ngIf="userForm.get('email')?.touched && userForm.get('email')?.errors?.['required']"
+            >Este campo es obligatorio</span
+          >
+          <span
+            *ngIf="userForm.get('email')?.touched && userForm.get('email')?.errors?.['pattern']"
+            >Introduce una dirección<br>de correo valida</span
+          >
+        </p>
+      </div>
+      <div>
+        <label><h4>Contraseña</h4></label><br>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          formControlName="password"
+        /><br>
+        <p>
+          <span  
+            *ngIf="userForm.get('password')?.touched && userForm.get('password')?.errors?.['required']"
+            >Este campo es obligatorio</span
+          >
+          <span
+            *ngIf="userForm.get('password')?.touched && userForm.get('password')?.errors?.['minlength']"
+            >contraseña incorrecta</span
+          >
+        </p>
+      </div>
+      <div>
+        <button class="margin-button"
+          type="ngSubmit" value="enviar" [disabled]="!userForm.valid">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </section>
+</div>

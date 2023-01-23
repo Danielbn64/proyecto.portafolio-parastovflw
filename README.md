@@ -1,3 +1,9 @@
+//Para poder acceder a toda la aplicación: daniload@gmail.com
+//admin123
+
+ruta para hacer login: http://localhost:4200
+
+
 # ProyectoPortafolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.

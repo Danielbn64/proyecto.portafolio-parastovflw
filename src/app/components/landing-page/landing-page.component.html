@@ -1,0 +1,68 @@
+<section class="hero">
+    <div class="hero-image">
+        <div class="title-hero">
+            <h1>Bienvenid@s a mi web<span><br>Soy Daniload</span></h1>
+        </div>
+        <div class="title-hero">
+            <h2>Desarrollador web fullstack</h2>
+        </div>
+        <div class="hero-image-opacity"></div>
+    </div>
+</section>
+<main class="main">
+    <div class="about-title">
+        <h3>Sobre mí</h3>
+    </div>
+    <div class="about-container">
+        <section class="about">
+            <div>
+                <p>Aquí puedes poner información sobre ti, tus habilidades y tu experiencia como desarrollador web.</p>
+            </div>
+            <div>
+                <p>Aquí puedes poner información sobre ti, tus habilidades y tu experiencia como desarrollador web.</p>
+            </div>
+            <div>
+                <p>Aquí puedes poner información sobre ti, tus habilidades y tu experiencia como desarrollador web.</p>
+            </div>
+        </section>
+    </div>
+    <section class="featured-projects">
+        <div class="featured-title">
+            <h3>Proyectos Destacados</h3>
+        </div>
+        <div class="featured-layout">
+            <div class="box-one">
+                <span class="more-options-1">
+                    <a class="more-options-button-1">detalle</a>
+                </span>
+                <img class="image-one" src="{{url+'get-image/'+featured[0].image}}" *ngIf="featured[0].image" />
+            </div>
+            <div class="box-two">
+                <img class="image-two" src="{{url+'get-image/'+featured[1].image}}" *ngIf="featured[1].image" />
+                <span class="more-options-2">
+                    <a class="more-options-button-2">detalle</a>
+                </span>
+            </div>
+            <div class="box-three">
+                <img class="image-three" src="{{url+'get-image/'+featured[2].image}}" *ngIf="featured[2].image" />
+                <span class="more-options-3">
+                    <a class="more-options-button-3">detalle</a>
+                </span>
+            </div>
+            <div class="box-four">
+                <a [routerLink]="['/proyectos']" class="see-more">
+                    <h3>Ver todo</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="goodbye-message">
+            <h3>Gracias por tu visita :)</h3>
+        </div>
+        <h4>Si te ha gustado esta web, házmelo saber</h4>
+        <!-- <a [routerLink]="['/contacto']"class="send-message">
+                <h3>Enviar mensaje</h3>
+            </a> -->
+    </section>
+</main>

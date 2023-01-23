@@ -1,0 +1,86 @@
+<div class="container">
+    <div *ngIf="project">
+        <div *ngIf="status == 'success'" class="success">
+            El proyecto se a creado correctamente puedes verlo
+            <a [routerLink]="['/proyecto',savedProject._id]">aquí</a>
+        </div>
+        <div *ngIf="status == 'failed'" class="failed">
+            El proyecto no se ha podido crear
+        </div>
+        <div class="form-wrapper">
+            <form class="form-create" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+                <div class="form-create-one">
+                    <div>
+                        <label for="name">
+                            <h4>Nombre</h4>
+                        </label><br />
+                        <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required />
+                        <p>
+                            <span *ngIf="name.touched && !name.valid">
+                                El nombre es obligatorio
+                            </span><br />
+                        </p>
+                    </div>
+                    <div>
+                        <label for="category">
+                            <h4>Categoria</h4>
+                        </label><br />
+                        <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category"
+                            required />
+                        <p>
+                            <span *ngIf="category.touched && !category.valid">
+                                La categoria es obligatorio
+                            </span><br />
+                        </p>
+                    </div>
+                    <div>
+                        <label for="year">
+                            <h4>Año de lanzamiento</h4>
+                        </label><br />
+                        <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" />
+                    </div>
+                    <div>
+                        <label for="languages">
+                            <h4>Lenguajes utilizados</h4>
+                        </label><br />
+                        <input type="text" name="languages" #languages="ngModel" [(ngModel)]="project.languages"
+                            required />
+                        <p>
+                            <span *ngIf="languages.touched && !languages.valid">
+                                Los lenguajes son<br/> obligatorios
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-create-two">
+                    <div>
+                        <label for="description">
+                            <h4>Descripción</h4>
+                        </label><br />
+                        <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required>
+                        </textarea><br />
+                        <p>
+                            <span *ngIf="description.touched && !description.valid">
+                                La descripción es obligatoria
+                            </span><br />
+                        </p>
+                    </div>
+                    <div>
+                        <label for="image">
+                            <h4>Imagen del proyecto</h4>
+                        </label>
+                        <div *ngIf="project.image">
+                            <img class="image" src="{{url+'get-image/'+project.image}}" *ngIf="project.image" />
+                        </div>
+                        <input (change)="getFile($event)" type="file" name="image" placeholder="Subir imagen">
+                    </div>
+                    <div class="button-end">
+                        <button type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+                            Crear
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
